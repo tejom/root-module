@@ -6,7 +6,7 @@ build:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 install: build
-	insmod $$PWD/root.ko
+	insmod $$PWD/root.ko pid=$(PID)
 
 remove: 
 	rmmod root
